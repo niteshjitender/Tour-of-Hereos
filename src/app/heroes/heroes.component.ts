@@ -90,6 +90,7 @@ export class HeroesComponent implements OnInit {
     this.heroService.addHero({ name } as Hero)
       .subscribe(hero => {
         this.heroes.push(hero);
+        this.refreshData() ;
       });
   }
 
@@ -185,7 +186,7 @@ export class HeroesComponent implements OnInit {
     else{
       this.deleteMultipleHeroFlag = true ;
     }
-    console.log("Called " + this.deleteMultipleHeroFlag) ;
+    console.log("Delete Multiple Heroes isDisabled: " + this.deleteMultipleHeroFlag) ;
   }
 
 }
